@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MÁY TÍNH NÂNG CAO</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<table>
+    <tr>
+        <td>
+            <label><input type="text" id = 'number1'></label>
+            <label><input type="text" id = 'number2'></label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><button type="button" onclick="caculator(this.id)" id = "cong">Addition(+)</button></label>
+            <label><button type="button" onclick="caculator(this.id)" id = "tru">Subtraction(-)</button></label>
+            <label><button type="button" onclick="caculator(this.id)" id = "nhan">Multiplication(*)</button></label>
+            <label><button type="button" onclick="caculator(this.id)" id = "chia">Division(/)</button></label>
+        </td>
+    </tr>
+</table>
+<p id = 'Result'>Result</p>
+</body>
+<script>
+    function caculator(id){
+        let numberFirst = document.getElementById('number1').value;
+        let numberSecond = document.getElementById('number2').value;
+        let Result;
+        let first = parseFloat(numberFirst);
+        let second = parseFloat(numberSecond);
+        if (id == "cong"){
+            Result = 'Result = '+ (first + second);
+        }
+        if (id == "tru"){
+            Result = 'Result = '+ (first - second);
+        }
+        if (id=="nhan"){
+            Result = 'Result = '+ (first * second);
+        }
+        if (id=="chia"){
+            Result = 'Result = '+ (first / second);
+        }
+        document.getElementById('Result').innerHTML = Result;
+    }
+</script>
+</html>

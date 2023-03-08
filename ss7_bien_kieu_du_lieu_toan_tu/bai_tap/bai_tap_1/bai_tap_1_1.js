@@ -1,0 +1,14 @@
+let inputPhysics;
+let inputChemistry;
+let inputBiology;
+inputPhysics = prompt('Nhập điểm Lý');
+inputChemistry = prompt('Nhập điểm Hóa');
+inputBiology = prompt('Nhập điểm Sinh');
+let physics = parseInt(inputPhysics);
+let chemistry = parseInt(inputChemistry);
+let biology = parseInt(inputBiology);
+let avg = (physics + chemistry + biology) / 3;
+let sum = physics + chemistry + biology;
+document.write('TRUNG BÌNH = ' + avg);
+document.write('<br/>');
+document.write('TỔNG = ' + sum);

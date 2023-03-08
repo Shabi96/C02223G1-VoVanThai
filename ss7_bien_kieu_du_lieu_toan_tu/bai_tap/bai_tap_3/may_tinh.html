@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>ỨNG DỤNG TÍNH TOÁN</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<table>
+    <tr>
+        <td><label><input type="text" id="number1"></label></td>
+        <td><label><input type="text" id="number2"></label></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td><label><button type="button" onclick="showAdd();">Addition(+)</button></label></td>
+        <td><label><button type="button" onclick="showSub();">Subtraction(-)</button></label></td>
+        <td><label><button type="button" onclick="showMul();">Multiplication(X)</button></label></td>
+        <td><label><button type="button" onclick="showDi();">Divison(/)</button></label></td>
+    </tr>
+</table>
+<p id="Result">Result</p>
+</body>
+<script>
+    function showAdd() {
+        let numberFirst = document.getElementById('number1').value;
+        let numberSecond = document.getElementById('number2').value;
+        let Result;
+        Result = 'Result Addition = ' + (numberFirst + numberSecond);
+        document.getElementById('Result').innerHTML = Result;
+    }
+    function showSub(){
+        let numberFirst = document.getElementById('number1').value;
+        let numberSecond = document.getElementById('number2').value;
+        let Result;
+        Result = 'Result Subtraction = ' + (numberFirst - numberSecond);
+        document.getElementById('Result').innerHTML = Result;
+    }
+    function showMul(){
+        let numberOne = document.getElementById('number1').value;
+        let numberTwo = document.getElementById('number2').value;
+        let Result;
+        Result = 'Result Multiplication = ' + (numberOne * numberTwo);
+        document.getElementById('Result').innerHTML = Result;
+    }
+    function showDi(){
+        let numberFir = document.getElementById('number1').value;
+        let numberSec = document.getElementById('number2').value;
+        let Result;
+        Result = 'Result Division = ' + (numberFir / numberSec);
+        document.getElementById('Result').innerHTML = Result;
+    }
+</script>
+</html>

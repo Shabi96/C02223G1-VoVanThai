@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ỨNG DỤNG</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><label for="Amount">Amount</label></th>
+            <th>FromCurrency</th>
+            <th>ToCurrency</th>
+        </tr>
+        <tr>
+            <td><label><input type="text" id="Amount"></label></td>
+            <td>
+                <label><select id="From">
+                    <option value="VNĐ">VNĐ</option>
+                    <option value="USD">USD</option>
+                </select></label>
+            </td>
+            <td>
+                <label><select id="To">
+                    <option value="USD">USD</option>
+                    <option value="VNĐ">VNĐ</option>
+                </select></label>
+            </td>
+            <td><button onclick="changeCurren()">Convert</button></td>
+        </tr>
+    </table>
+<p id="Result">Result</p>
+</body>
+<script src="bai_tap_2.js"></script>
+</html>
