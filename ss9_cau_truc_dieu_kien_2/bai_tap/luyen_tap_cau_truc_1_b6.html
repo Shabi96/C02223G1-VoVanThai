@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính số hoa hồng của bạn:</h2>
+<label><input type="text" id="soTien">(Doanh số bán hàng của bạn)</label><br>
+<br>
+<button type="button" onclick="doanhThu();">KIỂM TRA</button>
+</body>
+<script>
+    function doanhThu() {
+        let doanhSo = (document.getElementById('soTien').value)*1;
+        let hoaHong = (doanhSo * 10)/100;
+        document.write('Hoa hồng của bạn là: ' + hoaHong);
+    }
+</script>
+</html>
