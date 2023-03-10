@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH LÃI NGÂN HÀNG</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><label>Số tiền vay ban đầu(VNĐ)</label></th>
+        <th><label>Số tháng cho vay</label></th>
+        <th><label>Số lãi hằng tháng(%)</label></th>
+    </tr>
+    <tr>
+        <td><label><input type="text" id="vay"></label></td>
+        <td><label><input type="text" id="thang"></label></td>
+        <td><label><input type="text" id="lai"></label></td>
+    </tr>
+</table>
+<button type="button" onclick="tinhLai();">Tính lãi</button>
+<p id="ketQua">Lãi suất hằng tháng là:</p>
+<script>
+    function tinhLai() {
+        let tienBanDau = (document.getElementById('vay').value) * 1;
+        let soThangVay = (document.getElementById('thang').value) * 1;
+        let laiHangThang = ((document.getElementById('lai').value) * 1)/100;
+        let ketQua = document.getElementById('ketQua');
+        ketQua.innerText = 'Số tiền phải trả hằng tháng là: ' + (tienBanDau*laiHangThang*(Math.pow((1 +laiHangThang), soThangVay)))/(Math.pow((1 +laiHangThang), (soThangVay - 1))) + 'VNĐ';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH THUẾ THU NHẬP CÁ NHÂN</title>
+</head>
+<body>
+<script>
+    let wageMoney = +prompt('Nhập số tiền lương của bạn:');
+    if (wageMoney >= 0) {
+        if (wageMoney <= 5000000) {
+            alert('Số tiền thuế của bạn là: ' + wageMoney*5/100 + ' VNĐ');
+        } else if (wageMoney <= 10000000) {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*10/100) - 250000) + ' VNĐ');
+        } else if (wageMoney <= 18000000) {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*15/100) - 750000) + ' VNĐ');
+        } else if (wageMoney <= 32000000) {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*20/10) - 1650000) + ' VNĐ');
+        } else if (wageMoney <= 52000000) {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*25/100) - 3250000) + ' VNĐ');
+        } else if (wageMoney <= 80000000) {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*30/100) - 5850000) + ' VNĐ');
+        } else {
+            alert('Số tiền thuế của bạn là: ' + ((wageMoney*50/100) - 9850000) + ' VNĐ')
+        }
+    } else {
+        alert('OH NO!! BẠN NHẬP SAI RỒI!');
+    }
+</script>
+</body>
+</html>

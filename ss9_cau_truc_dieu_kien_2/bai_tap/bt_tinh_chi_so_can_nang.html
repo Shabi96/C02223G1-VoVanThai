@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Chỉ số cân nặng:</h2>
+<table>
+    <tr>
+        <td><label>Nhập chiều cao của bạn(m):</label></td>
+        <td><label><input type="text" id="tall"></label></td>
+    </tr>
+    <tr>
+        <td><label>Nhập cân nặng của bạn(kg):</label></td>
+        <td><label><input type="text" id="weight"></label></td>
+    </tr>
+</table>
+<button type="button" onclick="showBmi();" id="ketQua">BMI</button>
 </body>
+<script>
+    function showBmi() {
+        let inputTall = document.getElementById('tall').value;
+        let inputWeight = document.getElementById('weight').value;
+        let bmi = inputWeight / (inputTall * inputTall);
+        let result = document.getElementById('ketQua');
+        if (bmi<18) {
+            result.innerText = 'Chỉ số BMI của bạn là ' + bmi + " Underweight";
+        } else if (bmi<25.0) {
+            result.innerText = 'Chỉ số BMI của bạn là ' + bmi + " Normal";
+        } else if (bmi<30.0) {
+            result.innerText = 'Chỉ số BMI của bạn là ' + bmi + " Overweight";
+        } else {
+            result.innerText = 'Chỉ số BMI của bạn là ' + bmi + " Obese";
+        }
+
+    }
+</script>
 </html>

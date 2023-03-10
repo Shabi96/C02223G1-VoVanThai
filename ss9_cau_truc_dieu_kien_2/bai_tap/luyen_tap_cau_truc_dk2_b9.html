@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KIỂM TRA CẠNH TAM GIÁC</title>
+</head>
+<body>
+<script>
+    let doDaiCanhA = +prompt('Nhập độ dài cạnh a:');
+    let doDaiCanhB = +prompt('Nhập độ dài cạnh b:');
+    let doDaiCanhC = +prompt('Nhập độ dài cạnh c:');
+    if (doDaiCanhA > 0 && doDaiCanhB > 0 && doDaiCanhC >0) {
+        if ((doDaiCanhA + doDaiCanhB) > doDaiCanhC) {
+            if ((doDaiCanhA + doDaiCanhC) > doDaiCanhB) {
+                if ((doDaiCanhB + doDaiCanhC) > doDaiCanhA) {
+                    alert('WOW!!! Đây là 3 cạnh của một tam giác!!!!');
+                }
+            }
+        }
+    } else {
+        alert('No!! Không đúng rồi! Mời bạn nhập lại');
+    }
+</script>
+</body>
+</html>

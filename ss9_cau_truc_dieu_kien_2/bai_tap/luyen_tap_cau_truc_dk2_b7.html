@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIẢI PHƯƠNG TRÌNH BẬC 2</title>
+</head>
+<body>
+<script>
+    let nhapHeSoA = +prompt('Giải phương trình bậc 2 có dạng ax^2+bx+c=0, nhập a');
+    let nhapHeSoB = +prompt('Nhập hệ số b');
+    let nhapHeSoC = +prompt('Nhập hệ số c');
+    let delta = nhapHeSoB*nhapHeSoB - 4*nhapHeSoA*nhapHeSoC;
+    if (delta<0) {
+        alert('Phương trình vô nghiệm');
+    } else if (delta == 0) {
+        alert('Phương trình có nghiệm kép x1 = x2 = ' + -nhapHeSoB/(2*nhapHeSoA));
+    } else {
+        alert('Phương trình có 2 nghiệm x1 = ' + (-nhapHeSoB+Math.sqrt(delta)/2*nhapHeSoA) + ' và x2 = ' + (-nhapHeSoB-Math.sqrt(delta)/2*nhapHeSoA));
+    }
+</script>
+</body>
+</html>

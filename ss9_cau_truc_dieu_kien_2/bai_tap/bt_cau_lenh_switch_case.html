@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>Tính số ngày trong tháng</h1>
+<table>
+    <tr>
+        <td><label>Nhập tháng:</label></td>
+        <td><label><input type="text" id="month"></label></td>
+        <td><button type="button" onclick="showDate();">Tính số ngày</button></td>
+    </tr>
+</table>
+<p id="ketQua">Kết quả:</p>
 </body>
+<script>
+    function showDate() {
+        let date = (document.getElementById('month').value)*1;
+        let ketQua = document.getElementById('ketQua');
+        switch (date) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ketQua.innerText = "Tháng " + date + " có 31 ngày";
+                break;
+            case 2:
+                ketQua.innerText = "Tháng " + date + " có 28 hoặc 29 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                ketQua.innerText = "Tháng " + date + " có 30 ngày";
+                break;
+            default:
+                ketQua.innerText = " Bạn nhập không phải số tháng trong năm";
+
+        }
+    }
+
+</script>
 </html>
