@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="startGames();">Chơi</button>
+</body>
+<script>
+    function startGames() {
+        let inputNumber = parseInt(prompt('Bạn muốn đoán trong khoảng nào?'));
+        let numberRandom = Math.random()*inputNumber;
+        let number;
+        for (number = 0; number < 3; number++) {
+            let numberSelect = parseInt(prompt('Cùng đoán nào'));
+            if (numberSelect < numberRandom) {
+                alert('Số bạn nhập nhỏ hơn');
+            } else if (numberSelect > numberRandom) {
+                alert('Số bạn nhập lớn hơn');
+            } else {
+                alert('Chúc mừng bạn đã đoán đúng!!!');
+            }
+        } alert('Bạn hết số lần đoán');
+    }
+</script>
+</html>
