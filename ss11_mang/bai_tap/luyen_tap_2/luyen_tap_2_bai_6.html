@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt('Nhập vào 1 chuỗi: ');
+    let stringS = string.split('');
+    for (let i = 0; i < stringS.length; i++) {
+        if (stringS[i] === '-') {
+            stringS[i] = '_';
+        }
+    }
+    console.log(stringS);
+</script>
+</body>
+</html>

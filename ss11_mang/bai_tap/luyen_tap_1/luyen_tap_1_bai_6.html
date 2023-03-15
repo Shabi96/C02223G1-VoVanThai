@@ -8,14 +8,14 @@
 <script>
     let numberS = [1, -10, 3, -5, 8, 11, 15, 12, 9, 4];
     let inputV = parseInt(prompt('Nhập vào 1 số nguyên V:'));
+    let isArray = false;
     for (let i = 0; i < numberS.length; i++) {
         if (inputV === numberS[i]) {
-            alert('V is in the array');
+            isArray = true;
             break;
-        } else {
-            alert('V is not in the array');
         }
     }
+    alert(isArray ? 'V is in the array' : 'V is not in the array');
 </script>
 </body>
 </html>
