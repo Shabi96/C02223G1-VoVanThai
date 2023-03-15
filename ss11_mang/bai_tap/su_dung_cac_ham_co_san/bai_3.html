@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputStr = prompt('Nhập vào một dãy kí tự: ');
+    console.log(inputStr);
+    let string = inputStr.toString();
+    console.log(string);
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [''];
+    for (let i = 0; i < string.length; i++) {
+        if (UPPER.indexOf(string[i]) !== (-1)) {
+            result.push(string[i].toLowerCase());
+        } else if (LOWER.indexOf(string[i]) !== (-1)) {
+            result.push(string[i].toUpperCase());
+        } else {
+            result.push(string[i]);
+        }
+    }
+    console.log(result.join());
+</script>
+</body>
+</html>

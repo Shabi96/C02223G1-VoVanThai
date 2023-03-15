@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberS = [1, -10, 3, -5, 8, 11, 15, 12, 9, 4];
+    let max = numberS[0];
+    let index;
+    for (let i = 1; i < numberS.length; i++) {
+        if (numberS[i] > max) {
+            max = numberS[i];
+            index = i;
+        }
+    }
+    document.write(max + ' ở vị trí ' + index);
+</script>
+</body>
+</html>

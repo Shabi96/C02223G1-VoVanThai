@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập từ:</p>
+<label><input type="text" id="input"></label>
+<button type="button" onclick="subViet();">Translate</button>
+</body>
+<script>
+    function subViet() {
+        let englishes = ['sugar', 'apple', 'hello', 'supper man'];
+        let vietSub = ['đường', 'táo', 'xin chào', 'siêu nhân'];
+        let translate = document.getElementById('input').value;
+        for (let i = 0; i < englishes.length; i++) {
+            if (translate == englishes[i]) {
+                document.write(vietSub[i]);
+                break;
+            }
+        }
+    }
+
+</script>
+</html>

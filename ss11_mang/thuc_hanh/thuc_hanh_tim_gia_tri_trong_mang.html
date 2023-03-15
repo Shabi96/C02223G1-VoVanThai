@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let x = prompt('Nhập vào 1 số: ');
+    let numbers = [0, -1, 5, -6, 7, 4, 10];
+    for (let i = 0; i < numbers.length; i++) {
+        if (x == numbers[i]) {
+            alert('Số vừa nhập ở vị trí ' + numbers[i] + ' là ' + i + ' trong mảng');
+        }
+    }
+</script>
 </body>
 </html>

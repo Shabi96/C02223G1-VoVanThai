@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let numbers = [0, 5, 8, -5, -7, 9, 10, 4];
+    let max = numbers[0];
+    let index = 0;
+    for (let i = 1; i < numbers.length; i++) {
+        if (max < numbers[i]) {
+            max = numbers[i];
+            index = i;
+        }
+    }
+    alert('MAX: ' + max + ' nằm ở vị trí ' + index);
+
+</script>
 </body>
 </html>
