@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function compare(x, y) {
+        if (x > y) {
+            alert(x + ' lớn hơn ' + y);
+        } else {
+            alert('tổng của hai số là: ' + (x + y));
+        }
+    }
+    let number1 = +prompt('Enter the first number:');
+    let number2 = +prompt('Enter the second number:');
+    let showResult = compare(number1, number2);
+</script>
 </body>
 </html>

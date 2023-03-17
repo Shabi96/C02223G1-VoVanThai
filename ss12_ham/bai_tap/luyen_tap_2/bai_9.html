@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkCharacters() {
+      let inputLength = +prompt('Nhập vào số lượng phần tử của mảng kí tự:');
+      let array = [];
+      for (let i = 0; i < inputLength; i++) {
+          let element = prompt('Nhập vào kí tự thứ ' + i);
+          array.push(element);
+      }
+      let inputLetter = prompt('Nhập vào 1 kí tự để kiểm tra:');
+      let index = 0;
+      for (let j = 0; j < array.length; j++) {
+          if (inputLetter == array[j]) {
+              index++;
+          }
+      } if (index > 0) {
+          console.log(index);
+      } else {
+          console.log(-1);
+      }
+  }
+  checkCharacters();
+</script>
+</body>
+</html>

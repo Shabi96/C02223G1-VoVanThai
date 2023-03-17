@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function swapInteger() {
+      let count = +prompt('Nhập vào số lượng phần tử của mảng số nguyên:');
+      let array = [];
+      for (let i = 0; i < count; i++) {
+          let element = +prompt('Nhập vào phần tử thứ ' + i);
+          array.push(element);
+      }
+      let swapArray = [];
+      for (let j = array.length - 1; j >= 0; j--) {
+          swapArray.push(array[j]);
+      }
+      alert('Mảng số nguyên đảo ngược là '+ swapArray);
+  }
+  swapInteger();
+</script>
+</body>
+</html>
