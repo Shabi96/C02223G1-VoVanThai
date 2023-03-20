@@ -8,18 +8,20 @@
 <script>
   function checkMin(x, y, z) {
       let min = x;
+      let result;
       if (y > min && z > min) {
-          console.log(x + ' là số nhỏ nhất');
+          result = x + ' là số nhỏ nhất';
       } else if (y < min && z > min) {
-          console.log(y + ' là số nhỏ nhất');
+          result = y + ' là số nhỏ nhất';
       } else {
-          console.log(z + ' là số nhỏ nhất');
+          result = z + ' là số nhỏ nhất';
       }
+      return result;
   }
   let number1 = parseInt(prompt('Nhập vào số nguyên đầu tiên: '));
   let number2 = parseInt(prompt('Nhập vào số nguyên thứ hai: '));
   let number3 = parseInt(prompt('Nhập vào số nguyên thứ ba: '));
-  checkMin(number1, number2, number3);
+  alert(checkMin(number1, number2, number3));
 </script>
 </body>
 </html>

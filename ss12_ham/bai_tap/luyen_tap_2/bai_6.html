@@ -7,13 +7,15 @@
 <body>
 <script>
   function checkNumberPlus(x) {
+      let result;
       if (x > 0) {
-          console.log(true);
+          result = true;
       } else {
-          console.log(false);
+          result = false;
       }
+      return result;
   }
-  checkNumberPlus(parseInt(prompt('Nhập vào một số nguyên:')));
+  alert(checkNumberPlus(parseInt(prompt('Nhập vào một số nguyên:'))));
 </script>
 </body>
 </html>

@@ -7,13 +7,15 @@
 <body>
 <script>
   function checkNumber(x) {
+      let result;
     if (typeof x == 'number') {
-        console.log(true);
+        result = true;
     } else {
-        console.log(false);
+        result = false;
     }
+    return result;
   }
-  checkNumber(prompt('Nhập vào 1 kí tự cần kiểm tra: '));
+  alert(checkNumber(prompt('Nhập vào 1 kí tự cần kiểm tra: ')));
 </script>
 </body>
 </html>
