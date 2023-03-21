@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<p id="display"></p>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+        setHeight(height) {
+            this.height = height;
+        }
+
+        area() {
+            return this.width * this.height;
+        }
+
+        perimeter() {
+            return (this.width + this.height) * 2;
+        }
+
+        drawRectangle() {
+            let c = document.getElementById('myCanvas');
+            let ctx = c.getContext('2d');
+            ctx.beginPath();
+            ctx.fillRect(5, 5, this.width, this.height);
+        }
+    }
+    let rectangle = new Rectangle(200, 170);
+    rectangle.setWidth(300);
+    rectangle.setHeight(270);
+    document.getElementById('display').innerHTML = 'Diện tích hình chữ nhật = ' + rectangle.area() +'<br>'+ 'Chu vi hình chữ nhật = ' + rectangle.perimeter();
+    rectangle.drawRectangle();
+</script>
+</body>
+</html>
