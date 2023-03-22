@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        decrease() {
+            if (this.isEmpty()) {
+                alert('Hết táo rồi');
+            } else {
+                this.weight--;
+            }
+        }
+
+        getWeight() {
+            return this.weight
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender() {
+            if(this.isMale()) {
+                return  'Male';
+            } else {
+                return 'Female';
+            }
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        eatApple(apple) {
+            if (this.checkApple(apple)) {
+                alert('Hết táo rồi!! Ăn cái khác điiii');
+            } else {
+                apple.decrease();
+                this.weight++;
+            }
+        }
+        say(something) {
+            console.log(this.name + something);
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+    }
+
+    let apple1 = new Apple(10);
+    let adam = new Human('Adam', 1, 55);
+    let eva = new Human('Eva', 0, 45);
+    adam.eatApple(apple1);
+    adam.say(': Apple is good!!');
+    eva.eatApple(apple1);
+    eva.say(': Yessss! Very good!!')
+    console.log(apple1.weight);
+    console.log(adam.weight);
+    console.log(eva.setGender());
+</script>
+</body>
+</html>
