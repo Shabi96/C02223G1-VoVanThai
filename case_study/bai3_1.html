@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arrayA = [];
+  let numberS;
+  let inputLength = +prompt('Nhập vào số phần tử của mảng:');
+  for (let i = 0; i < inputLength; i++) {
+      numberS = +prompt('Nhập vào phần tử thứ ' + (i+1));
+      arrayA.push(numberS);
+  }
+  console.log(arrayA);
+  let arrayB = [];
+  let prefixSum = 0;
+  for(let i = 0; i < arrayA.length; i++) {
+      prefixSum += arrayA[i];
+      arrayB.push(prefixSum);
+  }
+  alert(arrayB);
+</script>
+</body>
+</html>

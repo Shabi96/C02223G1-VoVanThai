@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h3>Nhập vào số tiền lương của nhân viên:</h3>
+<label><input type="text" id="input">VNĐ <br>
+  <button type="button" onclick="getSalary();">Result</button>
+</label>
+<p id="tax"></p>
+<p id="result"></p>
+</body>
+<script>
+  function getSalary() {
+    let inputMoney = document.getElementById('input').value;
+    let taxSalary;
+    let salary;
+    if (inputMoney >= 15000000 && inputMoney > 0) {
+      taxSalary = (inputMoney * 20) / 100;
+    } else if (inputMoney >= 7000000) {
+      taxSalary = (inputMoney * 10) / 100;
+    } else {
+      taxSalary = (inputMoney * 5) / 100;
+    }
+    salary = inputMoney - taxSalary;
+    document.getElementById('tax').innerHTML = 'Số tiền thuế của bạn là: ' + taxSalary + ' VNĐ';
+    document.getElementById('result').innerHTML = 'Số tiền lương thực nhận sau khi trừ thuế là: ' + salary + 'VNĐ';
+  }
+</script>
+</html>

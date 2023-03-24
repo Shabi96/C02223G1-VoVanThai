@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert('MENU  1. Cafe  2. Cam vắt  3. Nước ép cà cốt 4. Nước ép cà chua 5. Nước lọc  6. Nước dừa');
+    let menuDrinks = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+    let price = [15000, 20000, 20000, 20000, 5000, 25000];
+    let inputNumber = +prompt('Bạn muốn uống gì nào?');
+    do{
+        let i = 1;
+        if(inputNumber == i) {
+            alert(price[inputNumber]);
+        }
+        i++;
+    } while (inputNumber > 0 && inputNumber < 7);
+</script>
+</body>
+</html>

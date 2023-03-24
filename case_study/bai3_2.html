@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayA = [7, 2, 5, 3, 5, 3];
+    let arrayB = [7, 2, 5, 4, 6, 6, 6, 9, 8, 1, 1, 6, 6, 5, 3, 1, 1, 1];
+
+    for (let i = 0; i < arrayA.length; i++) {
+        if (arrayB.indexOf(arrayA[i]) != -1) {
+            arrayB.splice(arrayB.indexOf(arrayA[i]), 1)
+        }
+    }
+    console.log(arrayB);
+    let arrayC = [];
+    for (let i = 0; i < arrayB.length; i++) {
+        if (i == arrayB.indexOf(arrayB[i])) {
+            arrayC.push(arrayB[i]);
+        }
+    }
+    console.log(arrayC);
+</script>
+</body>
+</html>
