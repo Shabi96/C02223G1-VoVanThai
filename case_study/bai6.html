@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><button type="button" onclick="">Thêm mới học viên</button></th>
+        <th><button type="button" onclick="">Sửa thông tin học viên</button></th>
+        <th><button type="button" onclick="">Xóa học viên</button></th>
+    </tr>
+</table>
+<script>
+  class CodeGym {
+      constructor(id, name, email, date, module) {
+          this.id = id;
+          this.name = name;
+          this.email = email;
+          this.date = date;
+          this.module = module;
+      }
+      getId() {
+          return  this.id;
+      }
+      setId(id) {
+          this.id = id;
+      }
+      getName() {
+          return this.name;
+      }
+      setName(name) {
+          this.name = name;
+      }
+      getEmail() {
+          return this.email;
+      }
+      setEmail(email) {
+          this.email = email;
+      }
+      getDate() {
+          return this.date;
+      }
+      setDate(date) {
+          this.date = date;
+      }
+      getModule() {
+          return this.module;
+      }
+      setModule(module){
+          this.module = module;
+      }
+  }
+  let codeGym = new CodeGym();
+  let codeGymArray = [];
+  function displayCodeGym() {
+      let tableString = '<table border="1">' +
+          '<tr>' +
+          '<th>Mã học viên</th>'+
+          '<th>Tên</th>' +
+          '<th>Lớp</th>' +
+          '<th>Email</th>' +
+          '<th>Ngày sinh</th>' +
+          '<th>Module</th>' +
+          '</tr>'
+       + '</table>';
+  }
+  displayCodeGym();
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let string = 'abcdefabcdefaa';
+  let count = 0;
+  for(let i = 0; i < string.length; i++) {
+      if(i == string.indexOf(string[i])) {
+          count++;
+      }
+  }
+  console.log(count);
+</script>
+</body>
+</html>

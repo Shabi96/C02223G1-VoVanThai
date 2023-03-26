@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrays = [];
+    let inputRow = +prompt('Nhập vào số hàng của mảng 2 chiều:');
+    let inputColumn = +prompt('Nhập vào số cột của mảng 2 chiều:');
+    for(let i = 0; i < inputRow; i++) {
+        arrays[i] = [];
+        for(let j = 0; j < inputColumn; j++) {
+            arrays[i][j] = +prompt('Nhập vào phần tử ' + (j+1) + ' của dòng ' + (i+1));
+        }
+    }
+    console.log(arrays);
+    let sumEven = 0;
+    function sumEvenArrays() {
+        for( let i = 0; i < arrays.length; i++) {
+            for (let j = 0; j < inputColumn; j++) {
+                if(arrays[i][j]%2==0) {
+                    sumEven += arrays[i][j];
+                }
+            }
+        }
+        alert('Tổng của các số chẵn trong mảng là ' + sumEven);
+    }
+    sumEvenArrays(arrays);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrays = [];
+    let inputRow = +prompt('Nhập vào số hàng của mảng 2 chiều:');
+    let inputColumn = +prompt('Nhập vào số cột của mảng 2 chiều:');
+    for (let i = 0; i < inputRow; i++) {
+        arrays[i] = [];
+        for (let j = 0; j < inputColumn; j++) {
+            arrays[i][j] = +prompt('Nhập vào phần tử ' + (j + 1) + ' của dòng ' + (i + 1));
+        }
+    }
+    console.log(arrays);
+    let count = 0;
+    let arrayIsPrime = [];
+
+    function isPrime(number) {
+
+        let flag = true;
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            count++;
+            arrayIsPrime.push(number);
+        }
+    }
+
+    function checkInArray(array) {
+
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] >= 2) {
+                    isPrime(array[i][j]);
+                }
+            }
+        }
+        alert('Mảng có ' + count + ' số nguyên tố. Các số nguyên tố trong mảng là: ' + arrayIsPrime);
+    }
+
+    checkInArray(arrays);
+</script>
+</body>
+</html>

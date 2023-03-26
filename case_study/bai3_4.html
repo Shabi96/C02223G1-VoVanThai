@@ -6,17 +6,27 @@
 </head>
 <body>
 <script>
-    alert('MENU  1. Cafe  2. Cam vắt  3. Nước ép cà cốt 4. Nước ép cà chua 5. Nước lọc  6. Nước dừa');
+    alert('MENU  1. Cafe  2. Cam vắt  3. Nước ép cà cốt 4. Nước ép cà chua 5. Nước lọc  6. Nước dừa  7. Thoát gọi món');
     let menuDrinks = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
     let price = [15000, 20000, 20000, 20000, 5000, 25000];
-    let inputNumber = +prompt('Bạn muốn uống gì nào?');
-    do{
-        let i = 1;
-        if(inputNumber == i) {
-            alert(price[inputNumber]);
+    let sum = 0;
+    let inputNumber;
+    do {
+        inputNumber = +prompt('Bạn muốn uống gì nào?');
+        if (inputNumber > 7 || inputNumber < 0) {
+            alert('Mời bạn nhập lại');
+            continue;
+        } else if (inputNumber == 7) {
+            break;
+        } else {
+            alert('Giá của ' + menuDrinks[inputNumber - 1] + ' là ' + price[inputNumber - 1] + ' VNĐ');
+            let order = +prompt('Bạn muốn gọi mấy phần?');
+            let money = price[inputNumber - 1] * order;
+            sum += money;
         }
-        i++;
-    } while (inputNumber > 0 && inputNumber < 7);
+        alert('Mời bạn tiếp tục ORDER! Nếu muốn thoát gọi món thì nhập 7');
+    } while (inputNumber > 0 || inputNumber < 8);
+    alert('Hóa đơn của bạn là: ' + sum + 'VNĐ');
 </script>
 </body>
 </html>
