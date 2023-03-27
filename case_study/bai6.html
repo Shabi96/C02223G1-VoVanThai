@@ -7,66 +7,101 @@
 <body>
 <table>
     <tr>
-        <th><button type="button" onclick="">Thêm mới học viên</button></th>
-        <th><button type="button" onclick="">Sửa thông tin học viên</button></th>
-        <th><button type="button" onclick="">Xóa học viên</button></th>
+        <th>
+            <button type="button" onclick="addStudent()">Thêm mới học viên</button>
+        </th>
+        <th>
+            <button type="button" onclick="editStudent()">Sửa thông tin học viên</button>
+        </th>
+        <th>
+            <button type="button" onclick="deleteStudent()">Xóa học viên</button>
+        </th>
     </tr>
 </table>
+<p id="showTable"></p>
 <script>
-  class CodeGym {
-      constructor(id, name, email, date, module) {
-          this.id = id;
-          this.name = name;
-          this.email = email;
-          this.date = date;
-          this.module = module;
-      }
-      getId() {
-          return  this.id;
-      }
-      setId(id) {
-          this.id = id;
-      }
-      getName() {
-          return this.name;
-      }
-      setName(name) {
-          this.name = name;
-      }
-      getEmail() {
-          return this.email;
-      }
-      setEmail(email) {
-          this.email = email;
-      }
-      getDate() {
-          return this.date;
-      }
-      setDate(date) {
-          this.date = date;
-      }
-      getModule() {
-          return this.module;
-      }
-      setModule(module){
-          this.module = module;
-      }
-  }
-  let codeGym = new CodeGym();
-  let codeGymArray = [];
-  function displayCodeGym() {
-      let tableString = '<table border="1">' +
-          '<tr>' +
-          '<th>Mã học viên</th>'+
-          '<th>Tên</th>' +
-          '<th>Lớp</th>' +
-          '<th>Email</th>' +
-          '<th>Ngày sinh</th>' +
-          '<th>Module</th>' +
-          '</tr>'
-       + '</table>';
-  }
-  displayCodeGym();
+    class Student {
+        constructor(id, name, classs, email, date, module) {
+            this.id = id;
+            this.name = name;
+            this.classs = classs;
+            this.email = email;
+            this.date = date;
+            this.module = module;
+        }
+    }
+
+    let studentArray = [];
+    function displayCodeGym() {
+        let tableString = '<table border="1">' +
+            '<tr>' +
+            '<th>Mã học viên</th>' +
+            '<th>Tên</th>' +
+            '<th>Lớp</th>' +
+            '<th>Email</th>' +
+            '<th>Ngày sinh</th>' +
+            '<th>Module</th>' +
+            '</tr>';
+        for (let i = 0; i < studentArray.length; i++) {
+            tableString += '<tr>' +
+                '<td>' + studentArray[i].id + '</td>' +
+                '<td>' + studentArray[i].name + '</td>' +
+                '<td>' + studentArray[i].classs + '</td>' +
+                '<td>' + studentArray[i].email + '</td>' +
+                '<td>' + studentArray[i].date + '</td>' +
+                '<td>' + studentArray[i].module + '</td>' +
+                '</tr>';
+        }
+        tableString += '</table>';
+        document.getElementById('showTable').innerHTML = tableString;
+    }
+
+    function addStudent() {
+        let addId = prompt('Nhập vào mã học viên:');
+        let addName = prompt('Nhập vào tên học viên:');
+        let addClass = prompt('Nhập lớp của học viên:');
+        let addEmail = prompt('Nhập email của học viên:');
+        let addDate = prompt('Nhập ngày tháng năm sinh học viên:');
+        let addModule = prompt('Nhập Module:');
+        let codeGym = new Student(addId, addName, addClass, addEmail, addDate, addModule);
+        studentArray.push(codeGym);
+        displayCodeGym();
+    }
+
+    function editStudent() {
+        let editId = prompt('Nhập vào mã học viên muốn sửa:');
+        let index = null;
+        for (let i = 0; i < studentArray.length; i++) {
+            if (editId != null) {
+                index = i;
+            } else {
+                alert('Mã học viên không tồn tại!');
+            }
+        }
+        studentArray[index] = {
+            id: prompt('Mã học viên'),
+            name: prompt('Tên học viên:'),
+            classs: prompt('Lớp:'),
+            email: prompt('Email:'),
+            date: prompt('Ngày tháng năm sinh:'),
+            module: prompt('Module:')
+        }
+        displayCodeGym();
+    }
+
+    function deleteStudent() {
+        let deleteID = prompt('Nhập vào mã học viên bạn muôn xóa:');
+        if (confirm('Bạn có chắc muốn xóa học viên này')) {
+            for (let i = 0; i < studentArray.length; i++) {
+                if (deleteID == studentArray[i].id) {
+                    studentArray.splice(studentArray[i], 1);
+                } else {
+                    alert('Mã học viên không tồn tại!');
+                }
+            }
+        }
+        displayCodeGym();
+    }
 </script>
 </body>
 </html>

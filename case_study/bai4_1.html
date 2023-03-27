@@ -7,8 +7,26 @@
 <body>
 <script>
     let stringA = 'tRuong  TaN  HAI';
-    let stringB = '';
-
+    let arrayStringA = stringA.split('');
+    for (let i = 0; i < arrayStringA.length; i++) {
+        if (arrayStringA[i] == ' ' && arrayStringA[i + 1] == ' ') {
+            arrayStringA.splice(i, 1);
+        }
+    }
+    let array = [];
+    for(let i = 0; i < arrayStringA.length; i++) {
+        array.push(arrayStringA[i].toLowerCase());
+    }
+    for(let i = 0; i < array.length; i++) {
+        array[0] = array[0].toUpperCase();
+        if(array[i] == ' ') {
+            if(array[i+1]!= ' ') {
+              array[i+1] = array[i+1].toUpperCase();
+            }
+        }
+    }
+    let newString = array.join('');
+    console.log(newString);
 </script>
 </body>
 </html>

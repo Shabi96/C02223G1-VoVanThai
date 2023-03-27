@@ -19,7 +19,7 @@
     let sumEven = 0;
     function sumEvenArrays() {
         for( let i = 0; i < arrays.length; i++) {
-            for (let j = 0; j < inputColumn; j++) {
+            for (let j = 0; j < arrays[i].length; j++) {
                 if(arrays[i][j]%2==0) {
                     sumEven += arrays[i][j];
                 }
@@ -27,7 +27,7 @@
         }
         alert('Tổng của các số chẵn trong mảng là ' + sumEven);
     }
-    sumEvenArrays(arrays);
+    sumEvenArrays();
 </script>
 </body>
 </html>
