@@ -31,7 +31,7 @@
         }
     }
 
-    let studentArray = [];
+    let arrayStudent = [];
     function displayCodeGym() {
         let tableString = '<table border="1">' +
             '<tr>' +
@@ -42,14 +42,14 @@
             '<th>Ngày sinh</th>' +
             '<th>Module</th>' +
             '</tr>';
-        for (let i = 0; i < studentArray.length; i++) {
+        for (let i = 0; i < arrayStudent.length; i++) {
             tableString += '<tr>' +
-                '<td>' + studentArray[i].id + '</td>' +
-                '<td>' + studentArray[i].name + '</td>' +
-                '<td>' + studentArray[i].classs + '</td>' +
-                '<td>' + studentArray[i].email + '</td>' +
-                '<td>' + studentArray[i].date + '</td>' +
-                '<td>' + studentArray[i].module + '</td>' +
+                '<td>' + arrayStudent[i].id + '</td>' +
+                '<td>' + arrayStudent[i].name + '</td>' +
+                '<td>' + arrayStudent[i].classs + '</td>' +
+                '<td>' + arrayStudent[i].email + '</td>' +
+                '<td>' + arrayStudent[i].date + '</td>' +
+                '<td>' + arrayStudent[i].module + '</td>' +
                 '</tr>';
         }
         tableString += '</table>';
@@ -64,21 +64,21 @@
         let addDate = prompt('Nhập ngày tháng năm sinh học viên:');
         let addModule = prompt('Nhập Module:');
         let codeGym = new Student(addId, addName, addClass, addEmail, addDate, addModule);
-        studentArray.push(codeGym);
+        arrayStudent.push(codeGym);
         displayCodeGym();
     }
 
     function editStudent() {
         let editId = prompt('Nhập vào mã học viên muốn sửa:');
         let index = null;
-        for (let i = 0; i < studentArray.length; i++) {
+        for (let i = 0; i < arrayStudent.length; i++) {
             if (editId != null) {
                 index = i;
             } else {
                 alert('Mã học viên không tồn tại!');
             }
         }
-        studentArray[index] = {
+        arrayStudent[index] = {
             id: prompt('Mã học viên'),
             name: prompt('Tên học viên:'),
             classs: prompt('Lớp:'),
@@ -92,9 +92,9 @@
     function deleteStudent() {
         let deleteID = prompt('Nhập vào mã học viên bạn muôn xóa:');
         if (confirm('Bạn có chắc muốn xóa học viên này')) {
-            for (let i = 0; i < studentArray.length; i++) {
-                if (deleteID == studentArray[i].id) {
-                    studentArray.splice(studentArray[i], 1);
+            for (let i = 0; i < arrayStudent.length; i++) {
+                if (deleteID == arrayStudent[i].id) {
+                    arrayStudent.splice(arrayStudent[i], 1);
                 } else {
                     alert('Mã học viên không tồn tại!');
                 }
