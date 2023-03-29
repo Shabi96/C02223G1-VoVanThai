@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt('Nhập vào số lượng phần tử của mảng:');
+  let arrayN = [];
+  for(let i = 0; i < n; i++) {
+      let inputN = +prompt('Nhập vào phần tử thứ ' + (i + 1));
+      arrayN.push(inputN);
+  }
+  alert(arrayN);
+  let sumDivisible = 0;
+  let count = 0;
+  for(let i = 0; i <arrayN.length; i++) {
+      if(i % 3 == 0 && arrayN[i] % 5 == 0) {
+          sumDivisible += arrayN[i];
+          count++;
+      }
+  }
+  alert('Giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: ' + sumDivisible/count);
+</script>
+</body>
+</html>

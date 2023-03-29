@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(string) {
+        let array = string.split(" ");
+        console.log(array);
+        let newArray = [];
+        if (array.length == 1) {
+            return 'Chuỗi chỉ có 1 từ nên không cần viết tắt';
+        } else {
+            for (let j = 0; j < array.length; j++) {
+                if (array[j] != "") {
+                    newArray.push(array[j]);
+                }
+            }
+            console.log(newArray);
+            let arrayResult = [];
+            for (let i = 0; i < newArray.length; i++) {
+               let newWord = newArray[i][0].toUpperCase();
+               arrayResult.push(newWord);
+            }
+            return arrayResult.join('');
+        }
+    }
+    let inputString = prompt('Nhập vào 1 chuỗi các ký tự');
+    alert(checkString(inputString));
+
+</script>
+</body>
+</html>

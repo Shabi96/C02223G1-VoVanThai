@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findFibonacci(array) {
+        let max = array[0];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        console.log(max);
+        let arrayFibonacci = [];
+        let number1 = 0;
+        let number2 = 1;
+        let number3;
+        arrayFibonacci.push(number1);
+        for (let i = 0; i < max; i++) {
+            number3 = number1 + number2;
+            number1 = number2;
+            number2 = number3;
+            arrayFibonacci.push(number1);
+        }
+        console.log(arrayFibonacci);
+        let resultArray = [];
+        for (let i = 0; i < array.length; i++) {
+            if (arrayFibonacci.indexOf(array[i])!= -1) {
+                resultArray.push(array[i]);
+            }
+        }
+        return resultArray.sort(function (a, b) {
+            return a - b;
+        })
+    }
+
+    let inputLength = +prompt('Nhập vào số lượng phần tử của mảng');
+    let checkArray = [];
+    for (let i = 0; i < inputLength; i++) {
+        let inputNumber = +prompt('Nhập vào phần tử số nguyên thứ ' + (i + 1));
+        checkArray.push(inputNumber);
+    }
+    alert(findFibonacci(checkArray));
+</script>
+</body>
+</html>

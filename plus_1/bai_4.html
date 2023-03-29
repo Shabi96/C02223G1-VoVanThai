@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addComputer()">Thêm mới máy</button>
+<p id="display"></p>
+<script>
+    class Computer {
+        constructor(id, name, company, price) {
+            this.id = id;
+            this.name = name;
+            this.company = company;
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getCompany() {
+            return this.company;
+        }
+
+        setCompany(company) {
+            this.company = company;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+        toString() {
+            return this.id + this.name + this.company + this.price;
+        }
+    }
+
+    let arrayComputer = [];
+    function displayComputer(arr) {
+        arr.sort(function (c1, c2){
+            return c1.price - c2.price;
+        })
+        let tableString = '<table border="1">' +
+            '    <tr>' +
+            '        <th>Mã máy</th>' +
+            '        <th>Tên máy</th>' +
+            '        <th>Hãng sản xuất</th>' +
+            '        <th>Giá</th>' +
+            '    </tr>';
+        for (let i = 0; i < arr.length; i++) {
+            tableString += '<tr>' +
+                '        <td>' + arr[i].getId() + '</td>' +
+                '        <td>' + arr[i].getName() + '</td>' +
+                '        <td>' + arr[i].getCompany() + '</td>' +
+                '        <td>' + arr[i].getPrice() + '</td>' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById('display').innerHTML = tableString;
+    }
+    displayComputer(arrayComputer);
+    function addComputer() {
+        let addId = prompt('Nhập vào mã máy');
+        let addName = prompt('Nhập vào tên máy');
+        let addCompany = prompt('Nhập vào công ty');
+        let addPrice = prompt('Nhập vào giá');
+        let newComputer = new Computer(addId, addName, addCompany, addPrice);
+        arrayComputer.push(newComputer);
+        displayComputer(arrayComputer);
+    }
+</script>
+</body>
+</html>
